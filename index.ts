@@ -6,9 +6,10 @@ app.on('ready', () => {
     console.log('ready')
 })
 
-app.get('/', function (req, res) {
+app.get('/:oya', function (req, res) {
     //runs a windows command
-    exec('touch pogchamp.txt', (err, stdout, stderr) => {
+    console.log(req.params.oya);
+    exec('echo pogchamp', (err, stdout, stderr) => {
        if (err) {
            // node couldn't execute the command
            return;
